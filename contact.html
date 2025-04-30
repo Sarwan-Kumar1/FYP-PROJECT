@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diagnosis Form - MedsureAI</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/js/all.min.js"></script>
+</head>
+<body>
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">
+      <a href="index.html"><img src="images/plus logo.png" alt="MedsureAI Logo"> MED<span style=" color: rgb(236, 16, 27); font-weight: bold; font-size: 30px;">SURE</span>AI</a>
+      
+    </div>
+    <!-- <a href="dashboard.html" class="dash">Dashboard</a> -->
+    <ul class="menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="awareness.html">Awareness</a></li>
+      <li><a href="book.html">Book Appointment</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Contact Us Section -->
+  <section class="contact-section" id="contact">
+    <h2>Contact Us</h2>
+    <div class="contact-container">
+      <div class="contact-form">
+        <form action="#" method="post" onsubmit="return validateForm()">
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+          <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+      <div class="map-container">
+        <iframe 
+          width="100%" height="400" 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3151.8354345093687!2d144.95373531590486!3d-37.81627974202105!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad65d43f3f4e1c1%3A0x2f2d9b9b0b5b3b1!2sMelbourne%20Central!5e0!3m2!1sen!2sau!4v1633106904656!5m2!1sen!2sau" 
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Section -->
+  <footer>
+    <div class="footer-container">
+      <div><p>© 2025 MedSureAI. All rights reserved.</p></div>
+      <div class="social-icons">
+        <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+        <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JavaScript Form Validation -->
+ 
+
+</body>
+</html>

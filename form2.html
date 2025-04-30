@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Profile Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    label {
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .full-width {
+      grid-column: span 2;
+    }
+
+    .profile-pic-wrapper {
+      text-align: center;
+    }
+
+    .profile-pic-wrapper img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid #007bff;
+      margin-bottom: 10px;
+    }
+
+    .submit-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      grid-column: span 2;
+    }
+
+    .submit-btn:hover {
+      background: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Profile Form</h2>
+    <form id="loginForm">
+      <div class="form-grid">
+
+        <div class="form-group">
+          <label for="fname"> Patient Name</label>
+          <input type="text" id="fname" name="fname" required>
+        </div>
+
+        <div class="form-group">
+          <label for="lname">Father Name</label>
+          <input type="text" id="lname" name="lname" required>
+        </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+
+        <div class="form-group">
+          <label for="cnic">CNIC</label>
+            <input type="text" id="text" name="text" placeholder="22022-1134552-2" required>
+          </div>
+
+        <div class="form-group">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone">
+        </div>
+
+        <div class="form-group">
+          <label for="gender">Gender</label>
+          <select id="gender" name="gender">
+            <option value="">Select</option>
+            <option>Male</option>
+            <option>Female</option>
+            <option>Other</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="gender">Blood Group</label>
+            <select id="gender" name="gender">
+              <option value="">Select</option>
+              <option>A+</option>
+              <option>A-</option>
+              <option>B+</option>
+              <option>B-</option>
+              <option>O+</option>
+              <option>O-</option>
+              <option>AB+</option>
+              <option>AB-</option>
+            </select>
+    </div>
+  
+       <div class="form-group">
+          <label for="dob">Date of Birth</label>
+          <input type="date" id="dob" name="dob">
+        </div>
+        
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address">
+        </div>
+
+        <div class="form-group profile-pic-wrapper full-width">
+          <label for="profilePic">Profile Picture</label>
+          <img id="preview" src="https://via.placeholder.com/120" alt="Profile Preview">
+          <input type="file" id="profilePic" accept="image/*" onchange="previewImage(event)">
+        </div>
+
+
+        <button type="submit" class="submit-btn">Sign Up</button>
+      </div>
+      
+    </form>
+  </div>
+
+  <script>
+    function previewImage(event) {
+      const reader = new FileReader();
+      reader.onload = function () {
+        const preview = document.getElementById('preview');
+        preview.src = reader.result;
+      }
+      reader.readAsDataURL(event.target.files[0]);
+    }
+      document.getElementById('loginForm').addEventListener('sign up', function(e) {
+        e.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+    
+        // Simple check (You can replace this with actual authentication)
+        if(username === 'admin' && password === '1234') {
+          document.getElementById('message').innerHTML = '<span class="text-success">Login successful!</span>';
+          setTimeout(() => {
+            window.location.href = 'login2.html';
+          }, 1000);
+        } else {
+          document.getElementById('message').innerHTML = '<span class="text-danger">Invalid credentials, try again.</span>';
+        }
+      });
+  </script>
+</body>
+</html>
